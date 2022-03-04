@@ -139,6 +139,7 @@ productsRouter.get('/getProducts', async (request,
         page = request.query.page;
 
     const limit = 1, offset = (page * limit) - limit;
+
     tableObject = await sortProducts(sortingMethod, limit, offset, productType);
     let objectsCount = tableObject.count;
     productsObject = tableObject.rows;
